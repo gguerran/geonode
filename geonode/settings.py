@@ -112,7 +112,7 @@ DATABASE_URL = os.getenv(
 if DATABASE_URL.startswith("spatialite"):
     try:
         spatialite_proc = subprocess.run(["spatialite", "-version"], stdout=subprocess.PIPE)
-        spatialite_version = int(spatialite_proc.stdout.decode()[0])
+        spatialite_version = 3
         if spatialite_version < 5:
             # To workaround Shapely/Spatialite interaction bug for Spatialite < 5
             from shapely import speedups

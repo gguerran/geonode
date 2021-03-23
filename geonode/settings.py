@@ -1217,7 +1217,7 @@ except ValueError:
     # fallback to regular list of values separated with misc chars
     ALLOWED_HOSTS = [HOSTNAME, 'localhost', 'django', 'geonode'] if os.getenv('ALLOWED_HOSTS') is None \
         else re.split(r' *[,|:|;] *', os.getenv('ALLOWED_HOSTS'))
-ALLOWED_HOSTS += "54.94.7.14"
+ALLOWED_HOSTS.append("54.94.7.14")
 
 # AUTH_IP_WHITELIST property limits access to users/groups REST endpoints
 # to only whitelisted IP addresses.
